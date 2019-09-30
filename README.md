@@ -8,3 +8,5 @@ The challenges are intended to be simple to solve, but we are interested in how 
 1. [Async refactoring](2_async/README.md)
 1. [Ordering schema modelling](3_ordering/README.md)
 1. [React FizzBuzz](4_fizzbuzz/README.md)
+
+There may be some additional follow up requirements / scope changes in person proceeding this.
