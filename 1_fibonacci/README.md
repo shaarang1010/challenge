@@ -1,4 +1,4 @@
-Write a function that calculates the nth number (0-indexed) in the Fibonacci sequence, ie:
+Write a function that calculates the nth number (0-indexed) in the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number), ie:
 
 ```
 n=0 -> 0
