@@ -9,11 +9,7 @@ function apiGet(path, cb) {
   https
     .get(
       resolve(SWAPI_URL, path),
-      {
-        headers: {
-          Accept: "application/json"
-        }
-      },
+      { headers: { Accept: "application/json" } },
       resp => {
         let data = "";
 
