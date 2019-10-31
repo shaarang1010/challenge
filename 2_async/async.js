@@ -61,24 +61,31 @@ function saveNames(people, cb) {
 }
 
 function main() {
+  // 1. Read the search terms in
+  // 2. Run the searches in parallel
+  // 3. Save the results to a file
+  // NOTE: retain console output order
+
   readSearchTerms((err, terms) => {
     if (err) {
-      console.error("Error reading search terms", err);
+      console.error(err);
       return;
     }
 
+    // running multiple requests in parallel - keep count so we know when done
     let numOk = 0;
-    let firstErr;
+    let existingErr;
     const people = Array(terms.length);
 
     const personCallback = (err, data, i) => {
-      if (firstErr) {
-        // ignore after first error
+      if (existingErr) {
+        // only care about the first error - ignore this
         return;
       }
+
       if (err) {
-        firstErr = err;
-        console.error("Error getting person", err);
+        existingErr = err;
+        console.error(err);
         return;
       }
 
@@ -88,7 +95,7 @@ function main() {
       if (numOk === terms.length) {
         saveNames(people, err => {
           if (err) {
-            console.error("Error saving names", err);
+            console.error(err);
             return;
           }
           console.log("Done");
@@ -102,7 +109,7 @@ function main() {
       });
     });
   });
-  console.log("Searching for character names matching search terms");
+  console.log("Searching...");
 }
 
 main();
