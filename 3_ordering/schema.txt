@@ -1,0 +1,30 @@
+/api/order/v1/{uid}
+
+{
+    "_uid": String,
+    "name": String,
+    "description": String,
+    "productCost": Number,
+    "quantity": Number,
+    "options":[{
+      {
+          "name": String,
+          "maxQuantity": Number,
+          "choice":[{
+              {
+                  "name": String,
+                  "cost": Number,
+                  "default": Boolean
+              }
+          }] 
+      }  
+    }] 
+}
+
+According to me, the above should be the schema for a product.
+1. Each product has a uid, name, description, cost and quantity
+2. A product can contain several options
+    2.1. Each option can contain many choices
+    2.2 Each option has a name, maximum quantity defined. This maximum quantity can be set to any number and logic can be written on the UI to allow 
+        user to select one or more quantity depending on this value.
+3. Each choice has a name, cost (optional) and a default - boolean, set to true if the choice is the default option.
