@@ -1,4 +1,4 @@
-/api/order/v1/{uid}
+/api/order/{uid}
 
 {
     "_uid": String,
