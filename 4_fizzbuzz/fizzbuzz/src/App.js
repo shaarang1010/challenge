@@ -1,16 +1,25 @@
 import React from "react";
 import "./App.css";
+import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/header/Header';
 
+import ResultBody from './components/result/ResultBody';
+
+
+/* 
+The design was left to barebone with some bootstrapping.
+Wanted to focus more on the showcasing my react knowledge.
+
+*/
 function App() {
+  const number = 100;
   return (
     <div className="App">
-      <header className="App-header">
-        {Array.from({ length: 100 })
-          .map((_, n) =>
-            n === 3 ? "Fizz" : n === 5 ? "Buzz" : n === 15 ? "FizzBuzz" : n
-          )
-          .join(", ")}
-      </header>
+    <Header className="App-Header" title="FizzBuzz React App">
+    <img src={logo} className="App-logo" alt="logo"/>
+    </Header>
+    <ResultBody number={number}/>
     </div>
   );
 }
