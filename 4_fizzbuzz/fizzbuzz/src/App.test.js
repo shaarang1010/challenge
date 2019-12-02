@@ -46,7 +46,7 @@ test('correctly counts FizzBuzzes', ()=>{
     expect(count).toEqual(6);
     });
 
-test('correctly counts Numbers', ()=>{
+test('correctly counts non FizzBuzz Numbers', ()=>{
   let count = 0;
   let result =  resultBody.fizzBuzzCountDown(100).split(',');
   for(let num of result){
